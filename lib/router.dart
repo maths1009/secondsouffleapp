@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:secondsouffleapp/ui/screens/login.dart';
+import 'package:secondsouffleapp/ui/screens/map.dart';
 
 class Routes {
   static const String login = '/login';
@@ -12,7 +13,7 @@ class Routes {
       case login:
         return MaterialPageRoute(builder: (_) => const LoginPage());
       case map:
-        return MaterialPageRoute(builder: (_) => const Text("Map"));
+        return MaterialPageRoute(builder: (_) => const MapPage());
       case products:
         return MaterialPageRoute(builder: (_) => const Text("Products"));
       case account:
