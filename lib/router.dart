@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:secondsouffleapp/ui/screens/account.dart';
 import 'package:secondsouffleapp/ui/screens/login.dart';
 import 'package:secondsouffleapp/ui/screens/map.dart';
 
@@ -17,7 +18,7 @@ class Routes {
       case products:
         return MaterialPageRoute(builder: (_) => const Text("Products"));
       case account:
-        return MaterialPageRoute(builder: (_) => const Text("Account"));
+        return MaterialPageRoute(builder: (_) => const AccountPage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
