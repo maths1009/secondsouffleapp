@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:secondsouffleapp/ui/widgets/base_page.dart';
+import 'package:secondsouffleapp/ui/widgets/overlay.dart';
 
 class AccountPage extends BasePage {
   const AccountPage({super.key}) : super(selectedIndex: 2);
@@ -86,7 +88,27 @@ class AccountContent extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  showCustomOverlay(
+                    context,
+                    'Gestion notifications',
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          'Recevoir des notifications',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        Switch(
+                          value: true,
+                          onChanged: (bool newValue) {},
+                        ),
+                      ],
+                    ),
+                  );
+                },
                 icon: const Icon(Icons.arrow_forward_ios),
               ),
             ],
