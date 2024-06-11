@@ -42,20 +42,36 @@ class _ProductsContentState extends State<ProductsContent> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Produits')),
-      body: ListView.builder(
-        itemCount: 5, // Number of products
-        itemBuilder: (context, index) {
-          return ProductItem(
-            name: 'Tissus',
-            description:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            quantity: quantities[index],
-            onAdd: () => addQuantity(index),
-            onRemove: () => removeQuantity(index),
-          );
-        },
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(height: 20),
+          const Text(
+            'Produits',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 20),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ProductItem(
+                  name: 'Tissus',
+                  description:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                  quantity: quantities[index],
+                  onAdd: () => addQuantity(index),
+                  onRemove: () => removeQuantity(index),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

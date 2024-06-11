@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void showCustomOverlay(BuildContext context, String title, Widget content) {
+void showOverlay(BuildContext context, String title, Widget content) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -8,17 +8,16 @@ void showCustomOverlay(BuildContext context, String title, Widget content) {
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
     builder: (BuildContext context) {
-      return CustomOverlayContent(title: title, content: content);
+      return OverlayContent(title: title, content: content);
     },
   );
 }
 
-class CustomOverlayContent extends StatelessWidget {
+class OverlayContent extends StatelessWidget {
   final String title;
   final Widget content;
 
-  const CustomOverlayContent(
-      {super.key, required this.title, required this.content});
+  const OverlayContent({super.key, required this.title, required this.content});
 
   @override
   Widget build(BuildContext context) {

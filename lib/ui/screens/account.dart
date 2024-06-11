@@ -89,7 +89,7 @@ class AccountContent extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
-                  showCustomOverlay(
+                  showOverlay(
                     context,
                     'Gestion notifications',
                     Row(
