@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:secondsouffleapp/ui/widgets/base_page.dart';
+import 'package:secondsouffleapp/ui/widgets/filter_overlay_content.dart';
+import 'package:secondsouffleapp/ui/widgets/overlay.dart';
 
 class MapPage extends BasePage {
   const MapPage({super.key}) : super(selectedIndex: 0);
@@ -91,7 +93,13 @@ class _MapContentState extends State<MapContent> {
             left: 20,
             right: 20,
             child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  showOverlay(
+                    context,
+                    'Filtre et recherche',
+                    const FilterOverlayContent(),
+                  );
+                },
                 child: Container(
                   padding: const EdgeInsets.all(13.0),
                   decoration: BoxDecoration(
